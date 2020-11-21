@@ -17,10 +17,9 @@ describe('AppointsDayView', () => {
 
   it('renders a div wiht the right id', () => {
     render(<AppointmentDayView appointments={[]} />);
-
     expect(
       container
-        .querySelector('div')
+        .querySelector('div#appointmentsDayView')
         .not.toBeNull()
     );
   });

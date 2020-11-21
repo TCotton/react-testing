@@ -6,21 +6,20 @@ import {
 } from '../src/Appointment';
 
 describe('AppointsDayView', () => {
-    let container;
-  
-    beforeEach(() => {
-      container = document.createElement('div');
-    });
-  
-    const render = (component) =>
-      ReactDOM.render(component, container);
+  let container;
+
+  beforeEach(() => {
+    container = document.createElement('div');
+  });
+
+  const render = (component) =>
+    ReactDOM.render(component, container);
 
   it('renders a div wiht the right id', () => {
     render(<AppointmentDayView appointments={[]} />);
-
     expect(
       container
-        .querySelector('div')
+        .querySelector('div#appointmentsDayView')
         .not.toBeNull()
     );
   });

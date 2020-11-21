@@ -1,29 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  Appointment,
-  AppointmentDayView,
-} from '../src/Appointment';
+import { Appointment } from '../src/Appointment';
 
 describe('AppointsDayView', () => {
     let container;
-  
+
     beforeEach(() => {
-      container = document.createElement('div');
+        container = document.createElement('div');
     });
-  
-    const render = (component) =>
-      ReactDOM.render(component, container);
 
-  it('renders a div wiht the right id', () => {
-    render(<AppointmentDayView appointments={[]} />);
+    const render = component => ReactDOM.render(component, container);
 
-    expect(
-      container
-        .querySelector('div')
-        .not.toBeNull()
-    );
-  });
+    it('renders a div wiht the right id', () => {
+        render(<AppointmentDayView appointments={[]} />);
+        expect(container.querySelector('div#appointmentsDayView').not.toBeNull());
+    });
 });
 
 describe('Appointment', () => {
@@ -34,7 +25,7 @@ describe('Appointment', () => {
     container = document.createElement('div');
   });
 
-  const render = (component) =>
+  const render = component =>
     ReactDOM.render(component, container);
 
   it('renders the customer first name', () => {

@@ -20,7 +20,7 @@ describe('AppointsDayView', () => {
 
     expect(
       container
-        .querySelector('div')
+        .querySelector('div#appointmentsDayView')
         .not.toBeNull()
     );
   });
