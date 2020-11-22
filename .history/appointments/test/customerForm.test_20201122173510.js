@@ -11,13 +11,17 @@ const createContainer = () => {
     container
   };
 };
-let render, container;
-describe('CustomerForm', () => {
-  beforeEach(() => {
-    ({ render, container } = createContainer());
-  });
 
-  console.dir(render);
+describe('CustomerForm', () => {
+  let render, container;
+
+  beforeEach(() => {
+    // ({ render, container } = createContainer());
+    render = createContainer().render;
+    container = createContainer().container;
+  });
+  console.dir(createContainer());
+
   it('renders a form', () => {
     render();
   });

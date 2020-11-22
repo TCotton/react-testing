@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 //import { createContainer } from './donManipulators';
 import { CustomerForm } from '../src/CustomerForm';
 
@@ -7,17 +6,19 @@ const createContainer = () => {
   const container = document.createElement('div');
 
   return {
-    render: component => ReactDOM.render(component, container),
-    container
+    render: (component) => ReactDOM.render(component, container),
+    container,
   };
 };
-let render, container;
+
 describe('CustomerForm', () => {
+  let render, container;
+
+  console.log(createContainer.render);
   beforeEach(() => {
-    ({ render, container } = createContainer());
+    ({ render, container } = createContainer);
   });
 
-  console.dir(render);
   it('renders a form', () => {
     render();
   });

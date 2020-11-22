@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 //import { createContainer } from './donManipulators';
 import { CustomerForm } from '../src/CustomerForm';
 
@@ -11,13 +10,16 @@ const createContainer = () => {
     container
   };
 };
-let render, container;
+
 describe('CustomerForm', () => {
+  let render, container;
+
   beforeEach(() => {
-    ({ render, container } = createContainer());
+    ({ render, container } = createContainer);
   });
 
-  console.dir(render);
+  console.dir(container);
+
   it('renders a form', () => {
     render();
   });
