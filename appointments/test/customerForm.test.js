@@ -1,28 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-//import { createContainer } from './donManipulators';
+import { createContainer } from './donManipulators';
 import { CustomerForm } from '../src/CustomerForm';
 
-const createContainer = () => {
-  const container = document.createElement('div');
+describe('CustomerForm', function () {
+  let render, container;
 
-  return {
-    render: component => ReactDOM.render(component, container),
-    container
-  };
-};
-let render, container;
-describe('CustomerForm', () => {
   beforeEach(() => {
     ({ render, container } = createContainer());
   });
 
-  console.dir(render);
-  it('renders a form', () => {
-    render();
+  const form = id => container.querySelector(`form[id="${id}"]`);
+
+  it('renders a form', function () {
+    render(<CustomerForm />);
   });
 
-  expect(
-    container.querySelector('form[id="customer"]')
-  ).not.toBeNull();
+  it('should make form cry', function () {
+    expect(form('customer')).not.toBeNull();
+  });
+
 });
